@@ -227,6 +227,7 @@ nav {
     font-weight: 200;
     width: 700px;
     text-align: center;
+    line-height: 25px;
 }
 
 /* GALLERY ITSELF */
@@ -327,6 +328,11 @@ nav {
 }
 
 .about-page-text > p {
+    color: rgb(170, 170, 170);
+    font-weight: 300;
+    line-height: 25px;
+}
+
+.text-focused {
     color: white;
-    font-weight: 200;
 }
