@@ -66,7 +66,7 @@ nav {
 .navbar-divider {
     border: 0;
     width: 85%;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* ABOUT */
@@ -83,7 +83,7 @@ nav {
     color: rgb(150, 150, 150);
     font-family: var(--f-inter);
     font-weight: 300;
-    line-height: 22px;
+    line-height: 20px;
 }
 
 .name-text {
@@ -93,7 +93,54 @@ nav {
 /* NAVBAR BOTTOM */
 
 .navbar-bottom {
-    padding: 20px;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+}
+
+.navbar-bottom-links {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.link {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(23, 23, 23);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: background-color 300ms;
+}
+
+.link-svg {
+    --size: 20px;
+    color: white;
+    width: var(--size);
+    height: var(--size);
+}
+
+.link:hover {
+    background-color: rgb(30,30,30);
+}
+
+.navbar-divider-bottom {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.copyright-text {
+    color: white;
+    text-align: center;
+    font-weight: 200;
+    font-family: var(--f-inter);
+    font-size: 0.8rem;
 }
 
 /* EMPTY */
