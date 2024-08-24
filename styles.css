@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jersey+10&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+
+:root {
+    --f-logo: "Teko", sans-serif;
+    --f-inter: "Inter", sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(16, 16, 16);
+}
+
+/* MAIN */
+
+main {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(auto, 1fr);
+}
+
+/* NAVBAR */
+
+nav {
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 280px;
+    height: 100%;
+    border-right: 1px solid rgb(28, 28, 28);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* NAVBAR TOP */
+
+.navbar-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* LOGO */
+
+.logo {
+    padding: 20px;
+}
+
+.logo > a {
+    color: white;
+    font-family: var(--f-inter);
+    font-size: 2rem;
+    font-weight: 200;
+    text-decoration: none;
+}
+
+/* DIVIDER */
+
+.navbar-divider {
+    border: 0;
+    width: 85%;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ABOUT */
+
+.about-me {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.about-me > p {
+    color: rgb(150, 150, 150);
+    font-family: var(--f-inter);
+    font-weight: 300;
+    line-height: 22px;
+}
+
+.name-text {
+    color: white;
+}
+
+/* NAVBAR BOTTOM */
+
+.navbar-bottom {
+    padding: 20px;
+}
+
+/* EMPTY */
+
+.empty {
+    width: 280px;
+}
