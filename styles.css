@@ -191,10 +191,17 @@ nav {
     font-family: var(--f-inter);
 }
 
+.pages {
+    display: none;
+}
+
+.active-page-itself {
+    display: flex;
+}
+
 /* GALLERY PAGE */
 
 .gallery-page {
-    display: flex;
     flex-direction: column;
 }
 
@@ -225,7 +232,6 @@ nav {
 /* GALLERY ITSELF */
 
 .gallery {
-    margin-top: 20px;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -294,4 +300,33 @@ nav {
 .image-innner-info:hover .image-innner-info-header,
 .image-innner-info:hover .image-innner-info-paragraph {
     transform: translateY(0);
+}
+
+/* ABOUT PAGE */
+
+.about-page {
+    width: 100%;
+}
+
+.about-page-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    row-gap: 10px;
+}
+
+.about-page-text > h1 {
+    color: white;
+    font-size: 5rem;
+    font-weight: 200;
+    line-height: 75px;
+    font-family: var(--f-logo);
+}
+
+.about-page-text > p {
+    color: white;
+    font-weight: 200;
 }

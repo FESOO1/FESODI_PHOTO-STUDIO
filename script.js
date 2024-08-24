@@ -1,4 +1,5 @@
 const pagesLinks = document.querySelectorAll('.page-link');
+const pagesThemselves = document.querySelectorAll('.pages');
 
 for (let i = 0; i < pagesLinks.length; i++) {
     pagesLinks[i].addEventListener('click', e => {
@@ -13,6 +14,18 @@ for (let i = 0; i < pagesLinks.length; i++) {
 
         e.preventDefault();
         pagesLinks[i].classList.add('active-page');
+
+
+
+        // PAGES THEMSELVES 
+
+        for (const pages of pagesThemselves) {
+            pages.classList.remove('active-page-itself');
+        };
+
+
+        pagesThemselves[i].classList.add('active-page-itself');
+        
     });
 };
 
@@ -52,11 +65,25 @@ const picData = [
         picture: 'https://images.unsplash.com/photo-1498462440456-0dba182e775b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         headerText: 'Majestic Mountain',
         paragraph: 'The mountain boasts towering peaks and stunning vistas, offering a serene escape into nature’s beauty. Explore its rugged trails and enjoy breathtaking views.'
+    },
+    {
+        picture: 'https://images.unsplash.com/photo-1723527256102-59bc79eb4d8f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        paragraph: 'The mountain boasts towering peaks and stunning vistas, offering a serene escape into nature’s beauty. Explore its rugged trails and enjoy breathtaking views.'
+    },
+    {
+        picture: 'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?q=80&w=2034&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        headerText: 'Majestic Mountain',
+        paragraph: 'The mountain boasts towering peaks and stunning vistas, offering a serene escape into nature’s beauty. Explore its rugged trails and enjoy breathtaking views.'
+    },
+    {
+        picture: 'https://images.unsplash.com/photo-1532592333381-a141e3f197c9?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        headerText: 'Majestic Mountain',
+        paragraph: 'The mountain boasts towering peaks and stunning vistas, offering a serene escape into nature’s beauty. Explore its rugged trails and enjoy breathtaking views.'
     }
 ]
 
 function gallery() {
-    for (let picture = 0; picture < 5; picture++) {
+    for (let picture = 0; picture < picData[picture].picture.length; picture++) {
         const newPicture = document.createElement('div');
         newPicture.classList.add('image-container');
         newPicture.innerHTML = `
