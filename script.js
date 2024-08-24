@@ -68,6 +68,7 @@ const picData = [
     },
     {
         picture: 'https://images.unsplash.com/photo-1723527256102-59bc79eb4d8f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        headerText: 'Majestic Mountain',
         paragraph: 'The mountain boasts towering peaks and stunning vistas, offering a serene escape into nature’s beauty. Explore its rugged trails and enjoy breathtaking views.'
     },
     {
