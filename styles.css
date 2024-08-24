@@ -69,25 +69,62 @@ nav {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* ABOUT */
+/* PAGES */
 
-.about-me {
+.navbar-pages {
+    padding: 0 20px;
+    width: 100%;
     margin-top: 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 20px;
+    flex-direction: column;
+    row-gap: 8px;
 }
 
-.about-me > p {
-    color: rgb(150, 150, 150);
+.page-link {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    column-gap: 13px;
+    text-decoration: none;
+    border-radius: 0.3rem;
     font-family: var(--f-inter);
     font-weight: 300;
-    line-height: 20px;
+    border: 1px solid rgba(255, 255, 255, 0);
 }
 
-.name-text {
+.page-link-svg {
+    color: rgb(150, 150, 150);
+}
+
+.page-link-text {
+    color: rgb(150, 150, 150);
+}
+
+.active-page {
+    background-color: rgb(25,25,25);
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    overflow: hidden;
+}
+
+.active-page > svg {
     color: white;
+}
+
+.active-page > span {
+    color: white;
+}
+
+.active-page::before {
+    content: '';
+    border-top: 1.4vw solid transparent;
+    border-bottom: 1.4vw solid transparent;
+    border-left: 0.21vh solid rgb(255, 89, 0);
+    border-right: 1vh solid transparent;
+    position: absolute;
+    left: -0.2px;
+    border-radius: 1rem;
 }
 
 /* NAVBAR BOTTOM */
