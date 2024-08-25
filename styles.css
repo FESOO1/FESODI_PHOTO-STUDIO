@@ -307,16 +307,13 @@ nav {
 
 .about-page {
     width: 100%;
+    flex-direction: column;
 }
 
 .about-page-text {
-    width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
     padding: 30px;
-    row-gap: 10px;
 }
 
 .about-page-text > h1 {
@@ -327,12 +324,30 @@ nav {
     font-family: var(--f-logo);
 }
 
-.about-page-text > p {
-    color: rgb(170, 170, 170);
-    font-weight: 300;
-    line-height: 25px;
-}
-
 .text-focused {
     color: white;
+}
+
+.about-me {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.about-me-left > p {
+    color: rgb(150, 150, 150);
+    line-height: 35px;
+}
+
+.about-me-right,
+.about-me-left {
+    padding: 0 20px;
+}
+
+.about-me-right > img {
+    width: 100%;
+    height: 560px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 1rem;
 }
