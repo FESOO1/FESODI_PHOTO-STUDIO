@@ -16,6 +16,53 @@ body {
     background-color: rgb(16, 16, 16);
 }
 
+/* CURSOR */
+
+.cursor {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(45, 45, 45, 0.3);
+    backdrop-filter: blur(5px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: 100ms;
+    z-index: 999;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.cursor > h3 {
+    display: none;
+    color: white;
+    font-size: 1rem;
+    font-family: var(--f-inter);
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.cursor-over-image {
+    width: 70px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3.2rem;
+    margin-left: -15px;
+}
+
+.close-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    height: max-content;
+    padding: 10px;
+    margin-left: -15px;
+}
+
 /* MAIN */
 
 main {
@@ -246,6 +293,7 @@ nav {
     overflow: hidden;
     cursor: pointer;
     position: relative;
+    cursor: none;
 }
 
 .image {
@@ -303,6 +351,35 @@ nav {
     transform: translateY(0);
 }
 
+/* MORE BUTTON */
+
+.more-button {
+    display: flex;
+    justify-content: center;
+    padding-block: 20px 30px;
+}
+
+.more-btn-itself {
+    border: 0;
+    font-size: 1rem;
+    color: white;
+    background-color: rgb(23, 23, 23);
+    padding: 10px 20px;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    font-family: var(--f-inter);
+    font-weight: 200;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: background-color 300ms;
+}
+
+.more-btn-itself:hover {
+    background-color: rgb(30,30,30);
+}
+
 /* ABOUT PAGE */
 
 .about-page {
@@ -350,4 +427,33 @@ nav {
     object-fit: cover;
     object-position: top;
     border-radius: 1rem;
+}
+
+
+
+
+/* ZOOM IN IMAGE */
+
+.zoom-image-container {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.799);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.zoom-image {
+    width: 500px;
+    height: 95%;
+    line-height: 0;
+    overflow: hidden;
+}
+
+.zoom-image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

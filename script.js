@@ -1,3 +1,49 @@
+// CUSTOM CURSOR
+
+const cursor = document.querySelector('.cursor');
+const cursorText = document.getElementById('cursorText');
+const closeText = document.getElementById('closeText');
+const moreButton = document.getElementById('moreButton');
+const navbarPages = document.querySelector('.navbar-pages');
+let topY = 0;
+let leftX = 0;
+
+
+window.addEventListener('mousemove', e => {
+    topY = e.clientY - 20;
+    leftX = e.clientX - 20;
+
+    cursor.style.transform = `translateX(${leftX}px) translateY(${topY}px)`;
+});
+
+const linksContainer = document.querySelector('.navbar-bottom-links');
+
+linksContainer.addEventListener('mouseenter', () => {
+    cursor.style.opacity = '0';
+});
+
+linksContainer.addEventListener('mouseleave', () => {
+    cursor.style.opacity = '1';
+});
+
+moreButton.addEventListener('mouseenter', () => {
+    cursor.style.opacity = '0';
+});
+
+moreButton.addEventListener('mouseleave', () => {
+    cursor.style.opacity = '1';
+});
+
+navbarPages.addEventListener('mouseenter', () => {
+    cursor.style.opacity = '0';
+});
+
+navbarPages.addEventListener('mouseleave', () => {
+    cursor.style.opacity = '1';
+});
+
+// JUMPING FROM PAGE TO PAGE
+
 const pagesLinks = document.querySelectorAll('.page-link');
 const pagesThemselves = document.querySelectorAll('.pages');
 
@@ -32,8 +78,12 @@ for (let i = 0; i < pagesLinks.length; i++) {
 // USING UNSPLASH API TO ACCESS PHOTOS
 
 const galleryContainer = document.querySelector('.gallery');
+const zoomedInContainer = document.querySelector('.zoom-image-container');
+const imageZoomedIn = document.getElementById('imageZoomedIn');
+const body = document.querySelector('body');
+let morePictures = 9;
 
-window.addEventListener('DOMContentLoaded', gallery)
+document.addEventListener('DOMContentLoaded', gallery)
 
 const picData = [
     {
@@ -84,7 +134,7 @@ const picData = [
 ]
 
 function gallery() {
-    for (let picture = 0; picture < picData[picture].picture.length; picture++) {
+    for (let picture = 0; picture < morePictures; picture++) {
         const newPicture = document.createElement('div');
         newPicture.classList.add('image-container');
         newPicture.innerHTML = `
@@ -96,5 +146,40 @@ function gallery() {
         `;
     
         galleryContainer.appendChild(newPicture);
+
+        newPicture.addEventListener('mouseenter', () => {
+            cursor.classList.add('cursor-over-image');
+            cursorText.style.display = 'unset';
+        });
+        newPicture.addEventListener('mouseleave', () => {
+            cursor.classList.remove('cursor-over-image');
+            cursorText.style.display = 'none';
+        });
+
+
+        // ZOOM IN FUNCTION
+
+        newPicture.addEventListener('click', () => {
+            imageZoomedIn.src = picData[picture].picture;
+            zoomedInContainer.style.display = 'flex';
+            body.style.overflow = 'hidden';
+            cursor.classList.add('close-button');
+
+            closeText.style.display = 'unset';
+        });
+
+        zoomedInContainer.addEventListener('click', () => {
+            zoomedInContainer.style.display = 'none';
+            body.style.overflow = 'unset';
+            cursor.classList.remove('close-button');
+            
+            closeText.style.display = 'none';
+        });
     };
 };
+
+// MORE BUTTON
+
+/* moreButton.addEventListener('click', () => {
+    morePictures += 3;
+}); */
