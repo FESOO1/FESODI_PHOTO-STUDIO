@@ -164,6 +164,7 @@ function gallery() {
             zoomedInContainer.style.display = 'flex';
             body.style.overflow = 'hidden';
             cursor.classList.add('close-button');
+            cursorText.style.display = 'none';
 
             closeText.style.display = 'unset';
         });
