@@ -9,6 +9,8 @@ const galleryContainer = document.querySelector('.gallery');
 const zoomedInContainer = document.querySelector('.zoom-image-container');
 const imageZoomedIn = document.getElementById('imageZoomedIn');
 const body = document.querySelector('body');
+const pagesLinks = document.querySelectorAll('.page-link');
+const pagesThemselves = document.querySelectorAll('.pages');
 
 // MENU - INVISIBLE NAVBAR
 
@@ -37,9 +39,6 @@ for (let cursorVanished = 0; cursorVanished < randomCursorVanished.length; curso
 };
 
 // JUMPING FROM PAGE TO PAGE
-
-const pagesLinks = document.querySelectorAll('.page-link');
-const pagesThemselves = document.querySelectorAll('.pages');
 
 for (let i = 0; i < pagesLinks.length; i++) {
     pagesLinks[i].addEventListener('click', e => {
@@ -74,63 +73,20 @@ for (let i = 0; i < pagesLinks.length; i++) {
 
 document.addEventListener('DOMContentLoaded', gallery)
 
-const picData = [
-    {
-        picture: 'https://images.unsplash.com/photo-1555099331-3e4ba49f26be?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        headerText: 'Majestic Mountain',
-        paragraph: 'The mountain boasts towering peaks and stunning vistas, offering a serene escape into nature’s beauty. Explore its rugged trails and enjoy breathtaking views.'
-    },
-    {
-        picture: 'https://images.unsplash.com/photo-1601189226514-c54bd62d946a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        headerText: 'Majestic Mountain',
-        paragraph: 'The mountain boasts towering peaks and stunning vistas, offering a serene escape into nature’s beauty. Explore its rugged trails and enjoy breathtaking views.'
-    },
-    {
-        picture: 'https://images.unsplash.com/photo-1525638331105-b12e8e317283?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        headerText: 'Majestic Mountain',
-        paragraph: 'The mountain boasts towering peaks and stunning vistas, offering a serene escape into nature’s beauty. Explore its rugged trails and enjoy breathtaking views.'
-    },
-    {
-        picture: 'https://images.unsplash.com/photo-1561009192-54e2c151fb0a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        headerText: 'Majestic Mountain',
-        paragraph: 'The mountain boasts towering peaks and stunning vistas, offering a serene escape into nature’s beauty. Explore its rugged trails and enjoy breathtaking views.'
-    },
-    {
-        picture: 'https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        headerText: 'Majestic Mountain',
-        paragraph: 'The mountain boasts towering peaks and stunning vistas, offering a serene escape into nature’s beauty. Explore its rugged trails and enjoy breathtaking views.'
-    },
-    {
-        picture: 'https://images.unsplash.com/photo-1498462440456-0dba182e775b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        headerText: 'Majestic Mountain',
-        paragraph: 'The mountain boasts towering peaks and stunning vistas, offering a serene escape into nature’s beauty. Explore its rugged trails and enjoy breathtaking views.'
-    },
-    {
-        picture: 'https://images.unsplash.com/photo-1723527256102-59bc79eb4d8f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        headerText: 'Majestic Mountain',
-        paragraph: 'The mountain boasts towering peaks and stunning vistas, offering a serene escape into nature’s beauty. Explore its rugged trails and enjoy breathtaking views.'
-    },
-    {
-        picture: 'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?q=80&w=2034&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        headerText: 'Majestic Mountain',
-        paragraph: 'The mountain boasts towering peaks and stunning vistas, offering a serene escape into nature’s beauty. Explore its rugged trails and enjoy breathtaking views.'
-    },
-    {
-        picture: 'https://images.unsplash.com/photo-1532592333381-a141e3f197c9?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        headerText: 'Majestic Mountain',
-        paragraph: 'The mountain boasts towering peaks and stunning vistas, offering a serene escape into nature’s beauty. Explore its rugged trails and enjoy breathtaking views.'
-    }
-]
 
-function gallery() {
+async function gallery() {
     for (let picture = 0; picture < 9; picture++) {
+
+        const response = await fetch('./picture-data.json');
+        const jsonData = await response.json();
+
         const newPicture = document.createElement('div');
         newPicture.classList.add('image-container');
         newPicture.innerHTML = `
-        <img src="${picData[picture].picture}" alt="${picData[[picture]].headerText}" class="image">
+        <img src="${jsonData[picture].picture}" alt="${jsonData[picture].headerText}" class="image">
         <div class="image-innner-info">
-            <h2 class="image-innner-info-header">${picData[[picture]].headerText}</h2>
-            <p class="image-innner-info-paragraph">${picData[[picture]].paragraph}</p>
+            <h2 class="image-innner-info-header">${jsonData[picture].headerText}</h2>
+            <p class="image-innner-info-paragraph">${jsonData[picture].paragraph}</p>
         </div>
         `;
     
