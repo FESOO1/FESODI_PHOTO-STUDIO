@@ -299,3 +299,37 @@ main {
     height: 100%;
     object-fit: cover;
 }
+
+/* MEDIA QEURIES */
+
+@media (max-width: 1300px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .cursor {
+        display: none;
+    }
+}
+
+@media (max-width: 1150px) {
+    .about-me {
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+        padding-bottom: 30px;
+    }
+    .about-me-right > img {
+        height: 400px;
+        object-position: 0 -120px;
+    }
+    .about-me-left > p {
+        line-height: 30px;
+    }
+}
+
+@media (max-width: 1050px) {
+    main {
+        padding-top: 60px;
+        grid-template-columns: 1fr;
+    }
+}

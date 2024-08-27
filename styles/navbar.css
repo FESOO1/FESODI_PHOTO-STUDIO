@@ -272,6 +272,9 @@
 
 .navbar-invisible-navbar-bottom-left-top {
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
 }
 
 .navbar-invisible-navbar-bottom-left-bottom {
@@ -279,4 +282,19 @@
     display: flex;
     flex-direction: column;
     row-gap: 10px;
+}
+
+/* MEDIA QEURIES */
+
+@media (max-width: 1050px) {
+    .navbar-visible {
+        display: none;
+    }
+    .navbar-invisible {
+        display: unset;
+    }
+}
+
+@media (max-width: 800px) {
+    
 }
