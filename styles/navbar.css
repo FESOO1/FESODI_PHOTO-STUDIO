@@ -1,5 +1,9 @@
 /* NAVBAR */
 
+.invisible-body-js-hidden {
+    overflow: hidden;
+}
+
 /* NAVBAR-VISIBLE */
 
 .navbar-visible {
@@ -233,6 +237,8 @@
     height: 1.5px;
 }
 
+/* INVISIBLE BOTTOM */
+
 .navbar-invisible-navbar-bottom {
     position: fixed;
     top: 60px;
@@ -241,15 +247,14 @@
     z-index: 999;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(2px);
-    /* display: none; */
-    display: unset;
+    display: none;
 }
 
 .invisible-navbar-menu-bottom-js {
-    display: flex;
+    display: unset;
 }
 
-/*  */
+/* NAVBAR INVISIBLE NAVBAR BOTTOM LEFT */
 
 .navbar-invisible-navbar-bottom-left {
     border-right: 1px solid rgb(28, 28, 28);

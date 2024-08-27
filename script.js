@@ -5,12 +5,17 @@ const closeText = document.getElementById('closeText');
 const randomCursorVanished = document.querySelectorAll('.random-cursor-vanished');
 const navbarInvisibleMenu = document.querySelector('.navbar-invisible-navbar-menu');
 const navbarInvisibleMenuBottom = document.querySelector('.navbar-invisible-navbar-bottom');
+const galleryContainer = document.querySelector('.gallery');
+const zoomedInContainer = document.querySelector('.zoom-image-container');
+const imageZoomedIn = document.getElementById('imageZoomedIn');
+const body = document.querySelector('body');
 
 // MENU - INVISIBLE NAVBAR
 
 navbarInvisibleMenu.addEventListener('click', () => {
     navbarInvisibleMenu.classList.toggle('invisible-navbar-menu-js');
     navbarInvisibleMenuBottom.classList.toggle('invisible-navbar-menu-bottom-js');
+    body.classList.toggle('invisible-body-js-hidden');
 });
 
 // CUSTOM CURSOR
@@ -67,12 +72,6 @@ for (let i = 0; i < pagesLinks.length; i++) {
 
 // USING UNSPLASH API TO ACCESS PHOTOS
 
-const galleryContainer = document.querySelector('.gallery');
-const zoomedInContainer = document.querySelector('.zoom-image-container');
-const imageZoomedIn = document.getElementById('imageZoomedIn');
-const body = document.querySelector('body');
-let morePictures = 9;
-
 document.addEventListener('DOMContentLoaded', gallery)
 
 const picData = [
@@ -124,7 +123,7 @@ const picData = [
 ]
 
 function gallery() {
-    for (let picture = 0; picture < morePictures; picture++) {
+    for (let picture = 0; picture < 9; picture++) {
         const newPicture = document.createElement('div');
         newPicture.classList.add('image-container');
         newPicture.innerHTML = `
