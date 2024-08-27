@@ -78,7 +78,7 @@ async function gallery() {
     for (let picture = 0; picture < 9; picture++) {
 
         // ACCESSING THE JSON FILE THAT CONTAINS ALL THE PICTURES AND CONTENT
-        const response = await fetch('./picture-data.json');
+        const response = await fetch('./data/picture-data.json');
         const jsonData = await response.json();
 
         // USING THE JSON FILE
