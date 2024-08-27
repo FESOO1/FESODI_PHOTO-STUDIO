@@ -4,11 +4,13 @@ const cursorText = document.getElementById('cursorText');
 const closeText = document.getElementById('closeText');
 const randomCursorVanished = document.querySelectorAll('.random-cursor-vanished');
 const navbarInvisibleMenu = document.querySelector('.navbar-invisible-navbar-menu');
+const navbarInvisibleMenuBottom = document.querySelector('.navbar-invisible-navbar-bottom');
 
 // MENU - INVISIBLE NAVBAR
 
 navbarInvisibleMenu.addEventListener('click', () => {
     navbarInvisibleMenu.classList.toggle('invisible-navbar-menu-js');
+    navbarInvisibleMenuBottom.classList.toggle('invisible-navbar-menu-bottom-js');
 });
 
 // CUSTOM CURSOR
@@ -23,9 +25,9 @@ window.addEventListener('mousemove', e => {
 for (let cursorVanished = 0; cursorVanished < randomCursorVanished.length; cursorVanished++) {
     randomCursorVanished[cursorVanished].addEventListener('mouseenter', () => {
         cursor.style.opacity = '0';
-        randomCursorVanished[cursorVanished].addEventListener('mouseleave', () => {
-            cursor.style.opacity = '1';
-        });
+    });
+    randomCursorVanished[cursorVanished].addEventListener('mouseleave', () => {
+        cursor.style.opacity = '1';
     });
 };
 
@@ -37,6 +39,8 @@ const pagesThemselves = document.querySelectorAll('.pages');
 for (let i = 0; i < pagesLinks.length; i++) {
     pagesLinks[i].addEventListener('click', e => {
 
+        e.preventDefault();
+
         // REMOVING THE CLASS THAT HAS INDICATOR DESIGN FROM ALL THE LINKS
 
         for (const links of pagesLinks) {
@@ -45,7 +49,6 @@ for (let i = 0; i < pagesLinks.length; i++) {
 
         // ADDING THE CLASS THAT HAS INDICATOR DESIGN TO CLICKED LINK
 
-        e.preventDefault();
         pagesLinks[i].classList.add('active-page');
 
 
@@ -165,9 +168,3 @@ function gallery() {
         });
     };
 };
-
-// MORE BUTTON
-
-/* moreButton.addEventListener('click', () => {
-    morePictures += 3;
-}); */
