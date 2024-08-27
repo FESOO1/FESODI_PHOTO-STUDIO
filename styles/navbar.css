@@ -177,7 +177,7 @@
     align-items: center;
     justify-content: space-between;
     padding-inline: 20px;
-    z-index: 999;
+    z-index: 995;
 }
 
 /* INVISIBLE LOGO */
@@ -295,6 +295,8 @@
     }
 }
 
-@media (max-width: 800px) {
-    
+@media (max-width: 350px) {
+    .navbar-invisible-navbar-bottom-left {
+        width: 265px;
+    }
 }

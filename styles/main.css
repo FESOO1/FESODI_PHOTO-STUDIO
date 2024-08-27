@@ -329,7 +329,35 @@ main {
 
 @media (max-width: 1050px) {
     main {
-        padding-top: 60px;
+        padding-top: 65px;
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 800px) {
+    .gallery-text > p {
+        width: 100%;
+    }
+    .image {
+        height: 450px;
+    }
+}
+
+@media (max-width: 600px) {
+    .zoom-image {
+        width: 95%;
+        height: 97%;
+    }
+    .gallery {
+        grid-template-columns: 1fr;
+        padding: 0;
+        padding-inline: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-width: 350px) {
+    .gallery {
+        padding-inline: 15px;
     }
 }
