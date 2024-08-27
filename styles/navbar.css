@@ -13,8 +13,7 @@
     width: 280px;
     height: 100%;
     border-right: 1px solid rgb(28, 28, 28);
-    /* display: flex; */
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
@@ -161,6 +160,10 @@
 }
 
 /* NAVBAR-INVISIBLE */
+
+.navbar-invisible {
+    display: none;
+}
 
 .navbar-invisible-navbar {
     width: 100%;
