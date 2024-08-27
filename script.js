@@ -1,16 +1,21 @@
-// CUSTOM CURSOR
-
+// ALL THE VARIABLES
 const cursor = document.querySelector('.cursor');
 const cursorText = document.getElementById('cursorText');
 const closeText = document.getElementById('closeText');
 const randomCursorVanished = document.querySelectorAll('.random-cursor-vanished');
-let topY = 0;
-let leftX = 0;
+const navbarInvisibleMenu = document.querySelector('.navbar-invisible-navbar-menu');
 
+// MENU - INVISIBLE NAVBAR
+
+navbarInvisibleMenu.addEventListener('click', () => {
+    navbarInvisibleMenu.classList.toggle('invisible-navbar-menu-js');
+});
+
+// CUSTOM CURSOR
 
 window.addEventListener('mousemove', e => {
-    topY = e.clientY - 20;
-    leftX = e.clientX - 20;
+    let topY = e.clientY - 20;
+    let leftX = e.clientX - 20;
 
     cursor.style.transform = `translateX(${leftX}px) translateY(${topY}px)`;
 });

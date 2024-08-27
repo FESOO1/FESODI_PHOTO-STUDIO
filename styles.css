@@ -284,6 +284,7 @@ main {
     height: 2px;
     background-color: white;
     transform: translateY(-3px);
+    transition: transform 300ms, height 300ms;
 }
 
 .navbar-invisible-navbar-menu-bottom {
@@ -291,6 +292,17 @@ main {
     height: 2px;
     background-color: white;
     transform: translateY(3px);
+    transition: transform 300ms, height 300ms;
+}
+
+.invisible-navbar-menu-js > .navbar-invisible-navbar-menu-top {
+    transform: translateY(0) rotateZ(40deg);
+    height: 1.5px;
+}
+
+.invisible-navbar-menu-js > .navbar-invisible-navbar-menu-bottom {
+    transform: translateY(0) rotateZ(-40deg);
+    height: 1.5px;
 }
 
 /* EMPTY */
