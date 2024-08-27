@@ -107,7 +107,7 @@ async function gallery() {
         // ZOOM IN FUNCTION
 
         newPicture.addEventListener('click', () => {
-            imageZoomedIn.src = picData[picture].picture;
+            imageZoomedIn.src = jsonData[picture].picture;
             zoomedInContainer.style.display = 'flex';
             body.style.overflow = 'hidden';
             cursor.classList.add('close-button');
