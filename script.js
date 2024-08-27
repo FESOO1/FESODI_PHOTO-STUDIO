@@ -77,9 +77,11 @@ document.addEventListener('DOMContentLoaded', gallery)
 async function gallery() {
     for (let picture = 0; picture < 9; picture++) {
 
+        // ACCESSING THE JSON FILE THAT CONTAINS ALL THE PICTURES AND CONTENT
         const response = await fetch('./picture-data.json');
         const jsonData = await response.json();
 
+        // USING THE JSON FILE
         const newPicture = document.createElement('div');
         newPicture.classList.add('image-container');
         newPicture.innerHTML = `
