@@ -3,8 +3,7 @@
 const cursor = document.querySelector('.cursor');
 const cursorText = document.getElementById('cursorText');
 const closeText = document.getElementById('closeText');
-const moreButton = document.getElementById('moreButton');
-const navbarPages = document.querySelector('.navbar-pages');
+const randomCursorVanished = document.querySelectorAll('.random-cursor-vanished');
 let topY = 0;
 let leftX = 0;
 
@@ -16,31 +15,14 @@ window.addEventListener('mousemove', e => {
     cursor.style.transform = `translateX(${leftX}px) translateY(${topY}px)`;
 });
 
-const linksContainer = document.querySelector('.navbar-bottom-links');
-
-linksContainer.addEventListener('mouseenter', () => {
-    cursor.style.opacity = '0';
-});
-
-linksContainer.addEventListener('mouseleave', () => {
-    cursor.style.opacity = '1';
-});
-
-moreButton.addEventListener('mouseenter', () => {
-    cursor.style.opacity = '0';
-});
-
-moreButton.addEventListener('mouseleave', () => {
-    cursor.style.opacity = '1';
-});
-
-navbarPages.addEventListener('mouseenter', () => {
-    cursor.style.opacity = '0';
-});
-
-navbarPages.addEventListener('mouseleave', () => {
-    cursor.style.opacity = '1';
-});
+for (let cursorVanished = 0; cursorVanished < randomCursorVanished.length; cursorVanished++) {
+    randomCursorVanished[cursorVanished].addEventListener('mouseenter', () => {
+        cursor.style.opacity = '0';
+        randomCursorVanished[cursorVanished].addEventListener('mouseleave', () => {
+            cursor.style.opacity = '1';
+        });
+    });
+};
 
 // JUMPING FROM PAGE TO PAGE
 
