@@ -10,14 +10,29 @@ const zoomedInContainer = document.querySelector('.zoom-image-container');
 const imageZoomedIn = document.getElementById('imageZoomedIn');
 const body = document.querySelector('body');
 const pagesLinks = document.querySelectorAll('.page-link');
+const pagesLinksInvisible = document.querySelectorAll('.page-link-invisible');
 const pagesThemselves = document.querySelectorAll('.pages');
 
 // MENU - INVISIBLE NAVBAR
 
+let menuHasOpened = false;
+
 navbarInvisibleMenu.addEventListener('click', () => {
-    navbarInvisibleMenu.classList.toggle('invisible-navbar-menu-js');
+    /* navbarInvisibleMenu.classList.toggle('invisible-navbar-menu-js');
     navbarInvisibleMenuBottom.classList.toggle('invisible-navbar-menu-bottom-js');
-    body.classList.toggle('invisible-body-js-hidden');
+    body.classList.toggle('invisible-body-js-hidden'); */
+
+    if (menuHasOpened === false) {
+        navbarInvisibleMenu.classList.add('invisible-navbar-menu-js');
+        navbarInvisibleMenuBottom.classList.add('invisible-navbar-menu-bottom-js');
+        body.classList.add('invisible-body-js-hidden');
+        menuHasOpened = true;
+    } else {
+        navbarInvisibleMenu.classList.remove('invisible-navbar-menu-js');
+        navbarInvisibleMenuBottom.classList.remove('invisible-navbar-menu-bottom-js');
+        body.classList.remove('invisible-body-js-hidden');
+        menuHasOpened = false;
+    }
 });
 
 // CUSTOM CURSOR
@@ -65,6 +80,42 @@ for (let i = 0; i < pagesLinks.length; i++) {
 
 
         pagesThemselves[i].classList.add('active-page-itself');
+        
+    });
+
+    // INVISIBLE SECTION JUMPER LINKS
+
+    pagesLinksInvisible[i].addEventListener('click', e => {
+
+        e.preventDefault();
+
+        // REMOVING THE CLASS THAT HAS INDICATOR DESIGN FROM ALL THE LINKS
+
+        for (const linksInvisible of pagesLinksInvisible) {
+            linksInvisible.classList.remove('active-page');
+        };
+
+        // ADDING THE CLASS THAT HAS INDICATOR DESIGN TO CLICKED LINK
+
+        pagesLinksInvisible[i].classList.add('active-page');
+
+
+
+        // PAGES THEMSELVES 
+
+        for (const pages of pagesThemselves) {
+            pages.classList.remove('active-page-itself');
+        };
+
+
+        pagesThemselves[i].classList.add('active-page-itself');
+
+        /* NAVBAR CLOSING */
+
+        navbarInvisibleMenu.classList.remove('invisible-navbar-menu-js');
+        navbarInvisibleMenuBottom.classList.remove('invisible-navbar-menu-bottom-js');
+        body.classList.remove('invisible-body-js-hidden');
+        menuHasOpened = false;
         
     });
 };
