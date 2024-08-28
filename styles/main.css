@@ -341,6 +341,16 @@ main {
     .image {
         height: 450px;
     }
+    .image-innner-info-header,
+    .image-innner-info-paragraph {
+        transform: translateY(0);
+    }
+    .image-innner-info {
+        backdrop-filter: blur(0px);
+        opacity: 1;
+        background-color: transparent;
+        background: linear-gradient(0deg, black, transparent 50%);
+    }
 }
 
 @media (max-width: 600px) {
@@ -356,6 +366,9 @@ main {
     }
     .about-me-right > img {
         object-position: 0 -50px;
+    }
+    .gallery-text {
+        padding: 30px 20px;
     }
 }
 
